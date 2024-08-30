@@ -1,7 +1,6 @@
 name: PrintSample
 on:
-  workflow_call:
-  workflow_dispatch:
+  workflow_call:  
 
 jobs:
   PrintLine:
