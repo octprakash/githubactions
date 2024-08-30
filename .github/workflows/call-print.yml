@@ -1,4 +1,4 @@
-name: PrintSample
+name: CallPrint
 on:  
   workflow_dispatch:
 
