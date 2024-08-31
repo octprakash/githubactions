@@ -1,4 +1,4 @@
-name: PrintSample
+name: GetInput
 on:
   workflow_call:  
     inputs:
