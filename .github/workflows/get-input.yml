@@ -19,8 +19,8 @@ jobs:
         run: |
           echo "Change Request Number: ${{ inputs.change-request }}"
 
-      - name: Check if branch exists
-        id: check_branch      
+      - name: check_input_data
+        id: check_input
         run: |      
           if  ${{ inputs.change-request != '' }}; then
               echo "Change Request Number --------- : ${{ inputs.change-request }}"
@@ -29,7 +29,7 @@ jobs:
           fi    
 
       - name: Set global variables
-        if: ${{ steps.check_branch.outputs.Branch == 'true' }}
+        if: ${{ steps.check_input.outputs.Branch == 'true' }}
         shell: bash
         run: |
           echo "GITHUB_REPOSITORY is $GITHUB_REPOSITORY"          
