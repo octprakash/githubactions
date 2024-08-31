@@ -13,6 +13,12 @@ jobs:
     runs-on: [self-hosted, linux, X64]
 
     steps:
+      # checks-out your repository under $GITHUB_WORKSPACE, so your job can access it.
+      - name: Checkout repository content
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          
       - name: Change Request
         if: ${{ inputs.change-request != '' }}
         shell: bash
