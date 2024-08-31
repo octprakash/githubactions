@@ -1,6 +1,7 @@
 name: GetInput
 on:
-  workflow_call:  
+  workflow_call:
+  workflow_dispatch:
     inputs:
       change-request:
         description: 'Enter the Change Request Number'
