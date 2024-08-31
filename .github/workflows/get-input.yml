@@ -1,0 +1,32 @@
+name: PrintSample
+on:
+  workflow_call:  
+    inputs:
+      change-request:
+        description: 'Enter the Change Request Number'
+        required: false
+        default: ''
+        type: string
+jobs:
+  PrintLine:
+    runs-on: [self-hosted, linux, X64]
+
+    steps:
+      - name: Change Request
+        if: ${{ inputs.change-request != '' }}
+        shell: bash
+        run: |
+          echo "Change Request Number: ${{ inputs.change-request }}"
+
+      - name: Set global variables
+        shell: bash
+        run: |
+          echo "GITHUB_REPOSITORY is $GITHUB_REPOSITORY"          
+          REPO=$(echo $GITHUB_REPOSITORY | cut -d "/" -f 2)
+          BRANCH=$(echo ${GITHUB_REF#refs/heads/})
+          echo "repo_name=$REPO" >> $GITHUB_ENV
+          echo "branch_name=$BRANCH" >> $GITHUB_ENV          
+          echo "Repo is $REPO"
+          echo "Branch name is $BRANCH"
+
+       
