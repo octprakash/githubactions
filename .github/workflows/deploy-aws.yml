@@ -33,4 +33,4 @@ jobs:
       - name: Run AWS CLI command
         run: 
           pwd
-          aws s3 cp src/* s3://gha-deploy/
+          
