@@ -32,5 +32,5 @@ jobs:
 
       - name: Run AWS CLI command
         run: 
-          aws s3 cp /home/ec2-user/actions-runner/_work/githubactions/githubactions/src s3://ghadeploy/ --recursive | tee s3_copy_output.log
+          aws s3 cp /home/ec2-user/actions-runner/_work/githubactions/githubactions/src s3://gha-deploy/ --recursive
 
