@@ -5,7 +5,7 @@ runs:
   steps:
     - name: Deployment
       shell: bash
-      run: |
-        fi
+      run: |        
         echo -e "********** Deployment Started **********************"
+        chmod +x ./*.sh
         ./deploy.sh
