@@ -32,4 +32,5 @@ jobs:
 
       - name: Run AWS CLI command
         run: 
-          aws s3 ls /src/* s3://gha-deploy/
+          pwd
+          aws s3 cp src/* s3://gha-deploy/
