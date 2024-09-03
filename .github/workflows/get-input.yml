@@ -46,4 +46,8 @@ jobs:
           echo "Repo is $REPO"
           echo "Branch name is $BRANCH"
 
-       
+      # Install Databricks and CLI profile configuration.
+      - name: Configure databricks-cli profile
+        uses: ./github/workflows/reuable
+        env:
+          BRANCH_NAME: ${{ env.branch_name }}       
