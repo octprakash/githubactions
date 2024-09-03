@@ -1,0 +1,25 @@
+name: Deploy in AWS
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: [self-hosted, linux, X64]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up AWS CLI
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: Verify AWS CLI installation
+        run: aws --version
+
+      - name: Run AWS CLI command
+        run: aws s3 ls # Replace with your actual AWS CLI command
