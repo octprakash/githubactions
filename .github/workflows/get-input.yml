@@ -46,7 +46,7 @@ jobs:
           echo "Repo is $REPO"
           echo "Branch name is $BRANCH"
 
-      # Install Databricks and CLI profile configuration.
+      # Call reusable action
       - name: call reusable action
         uses: ./github/workflows/reuable
         env:
