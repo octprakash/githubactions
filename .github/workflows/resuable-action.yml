@@ -1,0 +1,12 @@
+name: full_reusable_action
+description: This "composite" action used for Full Deployment.
+runs:
+  using: "composite"
+  steps:
+    - name: Deployment
+      shell: bash
+      run: |
+        fi
+        echo -e "********** Deployment Started **********************"
+        ./deploy.sh
+
