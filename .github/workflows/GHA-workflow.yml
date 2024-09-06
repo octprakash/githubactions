@@ -2,6 +2,9 @@ name: Demo In GitHub Actions Workflow
 on: [push]
 jobs:
   GitHub-Actions-Workflows:
-    runs-on: ubuntu-latest
-    steps: |
-      run: echo "${{ github.event_name }} event automatically triggered this job."
+    runs-on: [self-hosted, linux, X64]
+    
+    steps: 
+      - name: GHA commands
+        run: echo "${{ github.event_name }} event automatically triggered this job."
+        
