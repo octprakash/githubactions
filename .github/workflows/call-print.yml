@@ -12,7 +12,9 @@ jobs:
   PrintLine:
     runs-on: [self-hosted, linux, X64]
 
-    steps:
-      - name: printLine
-        if: ${{ inputs.change-request != '' }}
-        uses: ./.github/workflows/print.yml
+  print:
+    permissions:
+       contents: write
+       id-token: write
+    if: ${{ inputs.change-request != '' }}
+    uses: ./.github/workflows/print.yml
