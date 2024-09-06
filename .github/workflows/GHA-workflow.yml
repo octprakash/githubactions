@@ -3,11 +3,13 @@ on:
   workflow_dispatch:
 jobs:
   GitHub-Actions-Workflows:
-    runs-on: [self-hosted, linux, X64]
-    
+    runs-on: ubuntu-latest    
     steps:     
       - run: echo "${{ github.event_name }} event automatically triggered this job."
       - run: echo " A ${{ runner.os }} server hosted by GitHub has this job running"
       - run: echo "The runner has cloned your ${{ github.repository }} repository."
       - run: echo " This job has a ${{ job.status }} status."      
-        
+      - run: echo "Details of your repository: repo-name: ${{ github.repository }} and branch name is${{ github.ref }} and your repository is ${{ github.repository }}."
+      — name: Checking out the repository’s code
+          uses: actions/checkout@v3      
+       
