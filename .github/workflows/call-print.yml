@@ -1,6 +1,12 @@
 name: CallPrint
 on:  
   workflow_dispatch:
+    inputs:
+      change-request:
+        description: 'Enter the Change Request Number'
+        required: false
+        default: ''
+        type: string
 
 jobs:
   PrintLine:
@@ -8,6 +14,5 @@ jobs:
 
     steps:
       - name: printLine
-        if: ${{ github.head_ref == 'main' }}
-        # Runs the tests, linters, etc. on the code that will be merged into the base branch
+        if: ${{ inputs.change-request != '' }}
         uses: ./.github/workflows/print.yml
