@@ -10,8 +10,5 @@ on:
 
 jobs:
   print:
-    permissions:
-       contents: write
-       id-token: write
     if: ${{ inputs.change-request != '' }}
     uses: ./.github/workflows/print.yml
