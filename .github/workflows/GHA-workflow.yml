@@ -9,9 +9,5 @@ jobs:
       - run: echo "${{ github.event_name }} event automatically triggered this job."
       - run: echo " A ${{ runner.os }} server hosted by GitHub has this job running"
       - run: echo "The runner has cloned your ${{ github.repository }} repository."
-      - run: echo "The workflow can now test your code with the runner."
-      - name: List files in the repository
-          run:| 
-            echo ls ${{ github.workspace }}
       - run: echo " This job has a ${{ job.status }} status."      
         
