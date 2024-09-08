@@ -22,7 +22,7 @@ on:
        required: true         
 jobs:
   PrintLine:
-    runs-on: [self-hosted, linux, X64]
+    runs-on: [ubuntu-latest]
 
     steps:
       # checks-out your repository under $GITHUB_WORKSPACE, so your job can access it.
